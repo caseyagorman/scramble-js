@@ -2,40 +2,18 @@
 <html>
 <head>
     <title>Word Scramble</title>
+<script src="scramble-helper.js"></script>
 </head>
 <body>
-    <h1>A JavaScript Word Scramble Game</h1>
+    <h1 id="welcome">A JavaScript Word Scramble Game</h1>
+      <button onclick="changeColor('blue');">blue</button>
+      <button onclick="changeColor('red');">red</button>
+      <br>
+      <button onclick="playGame();">Play Game</button>
 
-    <script>
-        const WORDS     = ["booger", "apple", "hackbright", "mango"];
-
-        // create an array of scrambled words
-        // create a map of scrambled words
-
-        let playing = true;
-
-        while (playing) {
-
-            // Select a scrambled word from your array. 
-
-            // Use `alert()` to show the user the scrambled word.
-
-            // Use `prompt()` to get the user's guess.
-
-            // Compare the guess to the original, unscrambled word. 
-            // If the user got it right, congratulate them, if not tell them so.
-
-#. `prompt()` takes arguments. Find out what they are and see if you can combine
-   the `alert()` and `prompt()` from the last two steps.
-
-#. Compare the guess to the original, unscrambled word. Did they get it right? If
-   so, congratulate them!
-
-            playing = confirm("Press OK to keep playing or Cancel to quit.");
-        }
-
-        alert("Goodbye!");
-    </script>
+<div id="winning" mouseover="" style="width: 300px; height:100px;">
+<h2> hello </h2>
+</div>
 
 </body>
 </html>

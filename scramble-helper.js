@@ -7,7 +7,7 @@ function reverseWord (word) {
     return newWord
 }
 
-console.log(reverseWord("hello"))
+// console.log(reverseWord("hello"))
 
 function reverseWordList(array) {
     let newArray = []
@@ -17,7 +17,7 @@ function reverseWordList(array) {
     return newArray
 }
 
-console.log(reverseWordList(['hello', 'goodbye', 'hola', 'adios']))
+// console.log(reverseWordList(['hello', 'goodbye', 'hola', 'adios']))
 // Create a function that takes an array of words and returns a new array of the
  // words with each word reversed.
 
@@ -33,7 +33,7 @@ function getRandomWord(array) {
     return array[getRandomInt(array.length)]
 }
 
-console.log(getRandomWord(['hello', 'goodbye', 'hola', 'adios']))
+// console.log(getRandomWord(['hello', 'goodbye', 'hola', 'adios']))
 
 
 
@@ -46,20 +46,28 @@ function makeMap(array){
     return map
 }
 
-console.log(makeMap(['hello', 'goodbye', 'hola', 'adios']))
+// console.log(makeMap(['hello', 'goodbye', 'hola', 'adios']))
 
 
 function checkGuess(guess, word, map) {
-    if (map[guess]){
-        console.log(word);
-        return word;
+    let cleanGuess = guess.toLowerCase().trim();
+    if (word === cleanGuess){
+
+        // let winner = document.getElementById('winning')
+        // winner.addEventListener("mouseover", winner.target.style.backgroundColor = "red");
+        let elem = document.querySelector('winning');
+        console.log(elem)
+        elem.style.color =  red;
+
+        return 'You are correct!';
+
     }
     else {
-        console.log(`Sorry, incorrect. The word was ${word}`);
+        return `Sorry, incorrect. The word was ${word}`
     }
 }
 
-checkGuess ('ollh', 'hello', makeMap(['hello', 'goodbye', 'hola', 'adios']))
+console.log(checkGuess('hello', 'hello', makeMap(['hello', 'goodbye', 'hola', 'adios'])))
 
 // ////////////////////////////////////////////////////////////////////////////
 // FURTHER STUDY
@@ -78,7 +86,31 @@ function scrambleWord(word) {
     return letters.join('')
 }
 
-console.log(scrambleWord('hello'))
 
-// Create a function that takes an array of words and returns a map with the
-// scrambled words as the keys and the original word as the values.
+function changeColor(newColor) {
+  let elem = document.getElementById('welcome');
+  console.log(elem)
+  elem.style.color = newColor;
+}
+
+
+function playGame(){
+        const WORDS     = ["booger", "apple", "hackbright", "mango"];
+        let playing = true;
+
+        while (playing) {
+            let word = reverseWord(getRandomWord(WORDS))
+            let map = makeMap(WORDS)
+
+            alert(word)
+
+            let guess = prompt('Guess the word')
+
+            alert(checkGuess(guess, map[word], map))
+
+            playing = confirm("Press OK to keep playing or Cancel to quit.");
+        }
+
+        alert("Goodbye!");
+}
+
